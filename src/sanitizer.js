@@ -15,11 +15,31 @@ export const _sanitizeDocument = function _sanitizeDocument(config, input) {
     // TODO implement this function and remove eslint-disable comment above
 };
 
-// a parser that doesn't run scripts or loads resources
-// eslint-disable-next-line no-unused-vars
+/**
+ * fragmentParser
+ * a parser that doesn't run scripts or loads resources
+ *
+ * @param {Node} ctx DOM node
+ * @param {Object} input Document or DocumentFragment
+ */
 export const _fragmentParser = function _fragmentParser(ctx, input) {
     // note: ctx is of type Node (element?)
-    // TODO implement this function and remove eslint-disable comment above
+    // TODO https://github.com/mozilla/sanitizer-polyfill/issues/3
+    // https://html.spec.whatwg.org/#concept-frag-parse-context
+    let doc = document.implementation.createHTMLDocument()
+    switch (ctx.nodeType) {
+        // https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType
+        case Node.ELEMENT_NODE:
+            console.log("element")
+            break;
+        case Node.TEXT_NODE:
+            console.log("text")
+            break;
+        default:
+            console.log("Unknown node type", ctx.nodeType)
+            break;
+    }
+
 };
 
 // eslint-disable-next-line no-unused-vars
