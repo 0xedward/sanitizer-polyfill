@@ -39,7 +39,7 @@ function setup() {
         sanitizeFor(localName, input) {
         // TODO: should parse/sanitize/filter/validate values for localName.
           const context = document.createElement(localName);
-          // Q: What is the expected return value of _fragmentParser? It looks like the expected return type might be a DocumentFragment.
+          // Q: What is the expected return value of _fragmentParser? It looks like the expected return type might be a DocumentFragment
           //    Range.createContextualFragment() seems like a suitable replacement for this line if `input` was a String rather then Document or DocumentFragment?
           let fragment = _fragmentParser(context, input);
           const sanitizedFragment = _sanitizeDocFragment(fragment);

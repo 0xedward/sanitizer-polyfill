@@ -8,6 +8,7 @@
 // eslint-disable-next-line no-unused-vars
 export const _sanitizeDocFragment = function _sanitizeDocFragment(config, input) {
     // TODO implement this function and remove eslint-disable comment above
+    // TODO maybe we can use https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator to traverse through nodes
 };
 
 // eslint-disable-next-line no-unused-vars
