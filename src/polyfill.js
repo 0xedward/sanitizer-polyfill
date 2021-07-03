@@ -22,7 +22,6 @@ function setup() {
     if (typeof window[GLOBALNAME] === "function") {
         return;
     }
-    //
     const sanitizer = function(config) {
       const api = Object.create({});
 
@@ -40,7 +39,9 @@ function setup() {
         sanitizeFor(localName, input) {
         // TODO: should parse/sanitize/filter/validate values for localName.
           const context = document.createElement(localName);
-          let fragment = _fragmentParser(context, input); // TODO what is the expected return value here? is Range.createContextualFragment() a suitable replacement for this line?
+          // Q: What is the expected return value of _fragmentParser? It looks like the expected return type might be a DocumentFragment.
+          //    Range.createContextualFragment() seems like a suitable replacement for this line if `input` was a String rather then Document or DocumentFragment?
+          let fragment = _fragmentParser(context, input);
           const sanitizedFragment = _sanitizeDocFragment(fragment);
           context.append(sanitizedFragment);
           return context;
