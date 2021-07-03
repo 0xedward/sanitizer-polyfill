@@ -34,6 +34,7 @@ function setup() {
           if (input instanceof Document) {
             return _sanitizeDocument(config, input)
           }
+          //Q: Do we need to update the spec to exclude DOMString? https://wicg.github.io/sanitizer-api/#typedefdef-sanitizerinput
           return new TypeError("Can't Sanitize input of type " + input.prototype);
         },
         sanitizeFor(localName, input) {
