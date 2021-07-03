@@ -23,7 +23,7 @@ export const _sanitizeDocument = function _sanitizeDocument(config, input) {
  * @param {Node} ctx DOM node
  * @param {Object} input Document or DocumentFragment
  */
-// Q: it looks like the purpose of _fragmentParser is to parse `input` under the context of `ctx`, so that `input` can be append to `ctx` correctly
+// Q: is the purpose of _fragmentParser is to parse `input` under the context of `ctx`, so that `input` can be append to `ctx` correctly and returned?
 export const _fragmentParser = function _fragmentParser(ctx, input) {
     // note: ctx is of type Node (element?)
     // Reference: https://github.com/mozilla/sanitizer-polyfill/issues/3
@@ -33,14 +33,20 @@ export const _fragmentParser = function _fragmentParser(ctx, input) {
     switch (ctx.nodeType) {
         // https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType
         case Node.ELEMENT_NODE:
-            console.log("element")
+            console.log(ctx.tagName," is type ELEMENT")
+            // should be using ctx.childNodes instead of ctx.children b/c ctx.children only contains element nodes - https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes#notes
+            // DocumentFragment doesn't have `childNodes` property only `children` property - https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment#methods 
+            // Do we need to consider document mode? https://dom.spec.whatwg.org/#concept-document-quirks
+
             // Q: If we accept string as `input`, we can probably do something like the following below:
             let range = document.createRange();
             range.selectNode(ctx);
             let documentFragment = range.createContextualFragment(input)
             return documentFragment;
+
         case Node.TEXT_NODE:
-            console.log("text")
+            // Q: Is it possible to get XSS through text and comment nodes? If not, we can append the TEXT node and return - https://stackoverflow.com/questions/476821/is-a-dom-text-node-guaranteed-to-not-be-interpreted-as-html
+            console.log(ctx.tagName," is type TEXT")
             break;
         default:
             console.log("Unknown node type", ctx.nodeType)
