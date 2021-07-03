@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Test Page for HTML Sanitizer API</title>
+</head>
+
+<body>
+    <h2>Input String</h2>
+    <textarea id="input" style="height: 50vh; width: 100%;"></textarea>
+    <br/>
+    <br/>
+    <button onclick="testFragmentParser(document.getElementById('input').value)">Test</button>
+    <script type="inline-module">
+        // TODO currently broken
+        import {_fragmentParser} from '../src/sanitizer.js';
+
+        function testFragmentParser(userInputString) {
+            // TODO shouldn't be calling a function that is intended to be private
+            const fragment = document.createRange().createContextualFragment(userInputString);
+            _fragmentParser(fragment)
+        }
+    </script>
+</body>
+
+</html>
