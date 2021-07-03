@@ -40,7 +40,7 @@ function setup() {
         sanitizeFor(localName, input) {
         // TODO: should parse/sanitize/filter/validate values for localName.
           const context = document.createElement(localName);
-          let fragment = _fragmentParser(context, input);
+          let fragment = _fragmentParser(context, input); // TODO what is the expected return value here? is Range.createContextualFragment() a suitable replacement for this line?
           const sanitizedFragment = _sanitizeDocFragment(fragment);
           context.append(sanitizedFragment);
           return context;
