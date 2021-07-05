@@ -28,21 +28,18 @@ function setup() {
       let normalizedConfig = _normalizeConfig(config);
       Object.assign(api, {
         sanitize(input) {
+          // Q: _fragmentParser accepts `input` as type DOMString. We might need to update the code block below 
           if (input instanceof DocumentFragment) {
             return _sanitizeDocFragment(config, input);
           }
           if (input instanceof Document) {
             return _sanitizeDocument(config, input)
           }
-          //Q: Do we need to update the spec to exclude DOMString? https://wicg.github.io/sanitizer-api/#typedefdef-sanitizerinput
           return new TypeError("Can't Sanitize input of type " + input.prototype);
         },
         sanitizeFor(localName, input) {
         // TODO: should parse/sanitize/filter/validate values for localName.
           const context = document.createElement(localName);
-          // Q: What is the expected return value of _fragmentParser? It looks like the expected return type might be a DocumentFragment
-          //    Range.createContextualFragment() seems like a suitable replacement for this line if `input` was a String rather then Document or DocumentFragment?
-          // https://w3c.github.io/DOM-Parsing/#ref-for-dom-range-createcontextualfragment-2
           let fragment = _fragmentParser(context, input);
           const sanitizedFragment = _sanitizeDocFragment(fragment);
           context.append(sanitizedFragment);
