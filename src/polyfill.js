@@ -42,6 +42,7 @@ function setup() {
           const context = document.createElement(localName);
           // Q: What is the expected return value of _fragmentParser? It looks like the expected return type might be a DocumentFragment
           //    Range.createContextualFragment() seems like a suitable replacement for this line if `input` was a String rather then Document or DocumentFragment?
+          // https://w3c.github.io/DOM-Parsing/#ref-for-dom-range-createcontextualfragment-2
           let fragment = _fragmentParser(context, input);
           const sanitizedFragment = _sanitizeDocFragment(fragment);
           context.append(sanitizedFragment);
