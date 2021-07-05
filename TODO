@@ -10,6 +10,3 @@ Infra TODO:
 
 Src todo:
 - implement the actual algorithms in sanitizer.js
-
-eslint todo:
-- might be worth trying https://github.com/amilajack/eslint-plugin-compat to help with polyfill development
