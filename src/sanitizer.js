@@ -17,9 +17,6 @@ export const _sanitizeDocument = function _sanitizeDocument(config, input) {
 };
 
 /**
- * fragmentParser
- * a parser that doesn't run scripts or loads resources
- *
  * @param {Node} contextNode DOM node
  * @param {DOMString} input String containing HTML the caller wants to insert into contextNode's tree - Reference: https://w3c.github.io/DOM-Parsing/#webidl-1767075462
  * @returns {DocumentFragment} TODO add return description - Reference: https://github.com/0xedward/sanitizer-polyfill/pull/1#discussion_r663745143
