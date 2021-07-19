@@ -35,5 +35,8 @@
   },
   "dependencies": {
     "dompurify": "^2.3.0"
-  }
+  },
+  "browserslist": [
+    "cover 99.9% or last 3 versions"
+  ]
 }
