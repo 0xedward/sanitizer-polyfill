@@ -32,11 +32,15 @@ export const _normalizeConfig = function _normalizeConfig(config) {
         // Should we return {} when user inputs {} or return the default HTML Sanitizer config? 
         return {}; 
     }
+    
+    // TODO normalize config first -> convert to DOMPurify sanitization config
 
     // TODO check config for missing elements (e.g. config doesn't contain dropElements, etc)
     // https://stackoverflow.com/questions/53361696/simple-way-to-return-default-value-if-accessing-properties-of-possibly-undefined/53362007
 
-    // From sanitizer spec: Note: Element names are expected to be ascii lowercase and those that don’t conform will be lowercased.
+    // TODO From sanitizer spec: Note: Element names are expected to be ascii lowercase and those that don’t conform will be lowercased.
+    // TODO contains information on how to normalize - https://github.com/WICG/sanitizer-api/pull/97/files
+    // TODO filter values we don't expect - https://github.com/mozilla/sanitizer-polyfill/issues/5
 
     // TODO convert the following keys: - https://github1s.com/cure53/DOMPurify/blob/HEAD/dist/purify.js#L342-L437
     // sanitizer config -> dompurify config
