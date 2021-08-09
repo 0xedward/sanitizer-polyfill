@@ -3,13 +3,15 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+function sanitizer() {
+
 /**
  * sanitize a document fragment in-place
  * @param {object} config - configuration of the sanitizer object
  * @param {Node} input - a document fragment
  * @return Nothing - the operation is in-place
  */
-export const sanitizeDocFragment = function _sanitizeDocFragment(
+ export const sanitizeDocFragment = function _sanitizeDocFragment(
   config,
   input
 ) {
@@ -432,3 +434,7 @@ const DEFAULT_BLOCKED_ELEMENTS = [
 ];
 const DEFAULT_DROP_ELEMENTS = [];
 const DEFAULT_DROP_ATTRIBUTES = [];
+
+}
+
+module.exports = sanitizer;
