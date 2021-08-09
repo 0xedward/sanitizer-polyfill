@@ -16,7 +16,8 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "test": "qunit"
   },
   "bugs": {
     "url": "https://github.com/mozilla/sanitizer-polyfill/issues"
@@ -35,7 +36,8 @@
     "eslint-plugin-compat": "^3.11.1",
     "eslint-plugin-jsdoc": "^36.0.6",
     "eslint-plugin-prettier": "^3.4.0",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "qunit": "^2.16.0"
   },
   "dependencies": {
     "dompurify": "^2.3.0"
