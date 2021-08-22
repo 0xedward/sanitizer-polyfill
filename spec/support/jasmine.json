@@ -1,0 +1,12 @@
+{
+  "spec_dir": "spec",
+  "spec_files": [
+    "polyfill-tests.js"
+  ],
+  "helpers": [
+    "helpers/**/*.?(m)js"
+  ],
+  "stopSpecOnExpectationFailure": false,
+  "random": true,
+  "jsLoader": "import"
+}

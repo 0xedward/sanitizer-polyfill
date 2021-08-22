@@ -18,7 +18,9 @@
     "lint": "eslint . --exit-on-fatal-error",
     "autolint": "eslint . --fix && prettier --write .",
     "prettier": "prettier --check .",
-    "build": "rollup --file build/cjs/sanitizer.js --format cjs --input src/polyfill.js"
+    "build:cjs": "rollup --file build/cjs/sanitizer.js --format cjs --input src/polyfill.js",
+    "build:es": "rollup --file build/es/sanitizer.js --format es --input src/polyfill.js",
+    "test": "jasmine"
   },
   "bugs": {
     "url": "https://github.com/mozilla/sanitizer-polyfill/issues"
@@ -37,6 +39,7 @@
     "eslint-plugin-compat": "^3.12.0",
     "eslint-plugin-jsdoc": "^36.0.7",
     "eslint-plugin-prettier": "^3.4.0",
+    "jasmine": "^3.9.0",
     "prettier": "^2.3.2",
     "rollup": "^2.56.2"
   },

@@ -88,3 +88,5 @@ class SanitizerError extends Error {
 }
 
 setup();
+
+module.exports = Sanitizer
