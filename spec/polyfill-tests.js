@@ -1,10 +1,11 @@
 // import Sanitizer from '../build/cjs/sanitizer.mjs';
+import Sanitizer from '../build/cjs/sanitizer.js';
 // import SanitizerError from '../build/es/sanitizer.js';
 
 describe("Sanitizer", function () {
   // var Sanitizer = import("../build/cjs/sanitizer.mjs");
   // var Sanitizer = require("../build/cjs/sanitizer.mjs");
-  var Sanitizer = require("../build/cjs/sanitizer.js");
+  // var Sanitizer = require("../build/cjs/sanitizer.mjs");
   // var Sanitizer = setup();
 
   it("print Sanitizer", () => {

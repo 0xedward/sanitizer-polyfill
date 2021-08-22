@@ -40,6 +40,7 @@
     "eslint-plugin-jsdoc": "^36.0.7",
     "eslint-plugin-prettier": "^3.4.0",
     "jasmine": "^3.9.0",
+    "jasmine-browser-runner": "^0.8.0",
     "prettier": "^2.3.2",
     "rollup": "^2.56.2"
   },

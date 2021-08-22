@@ -1,0 +1,18 @@
+{
+  "srcDir": "src",
+  "srcFiles": [
+    "**/*.?(m)js"
+  ],
+  "specDir": "spec",
+  "specFiles": [
+    "polyfill-tests.js"
+  ],
+  "helpers": [
+    "helpers/**/*.?(m)js"
+  ],
+  "env": {},
+  "random": true,
+  "browser": {
+    "name": "firefox"
+  }
+}
