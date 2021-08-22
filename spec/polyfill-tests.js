@@ -1,11 +1,13 @@
 // import Sanitizer from '../build/cjs/sanitizer.mjs';
-import Sanitizer from '../build/cjs/sanitizer.js';
+// import Sanitizer from '../build/cjs/sanitizer.js';
+// import Sanitizer from '../cjs/polyfill.js';
 // import SanitizerError from '../build/es/sanitizer.js';
 
 describe("Sanitizer", function () {
   // var Sanitizer = import("../build/cjs/sanitizer.mjs");
   // var Sanitizer = require("../build/cjs/sanitizer.mjs");
   // var Sanitizer = require("../build/cjs/sanitizer.mjs");
+  var Sanitizer = require("../cjs/polyfill.js");
   // var Sanitizer = setup();
 
   it("print Sanitizer", () => {

@@ -20,7 +20,8 @@
     "prettier": "prettier --check .",
     "build:cjs": "rollup --file build/cjs/sanitizer.js --format cjs --input src/polyfill.js",
     "build:es": "rollup --file build/es/sanitizer.js --format es --input src/polyfill.js",
-    "test": "jasmine"
+    "test": "jasmine",
+    "babel": "npx babel src --out-dir cjs"
   },
   "bugs": {
     "url": "https://github.com/mozilla/sanitizer-polyfill/issues"
@@ -34,6 +35,8 @@
     "README.md"
   ],
   "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-compat": "^3.12.0",
